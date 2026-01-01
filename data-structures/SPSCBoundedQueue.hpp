@@ -2,6 +2,7 @@
 #define LOCK_FREE_DATA_STRUCTURE_SPSC_BOUNDED_QUEUE_HPP
 
 #include <array>
+
 #include "utils.hpp"
 
 namespace lockfree {
@@ -55,8 +56,8 @@ public:
     }
 
 private:
-    std::size_t m_headIdx{};
-    std::size_t m_tailIdx{};
+    std::atomic<std::size_t> m_headIdx{};
+    std::atomic<std::size_t> m_tailIdx{};
     std::array<T, N> m_data;
 };
 
