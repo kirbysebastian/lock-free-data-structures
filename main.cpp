@@ -6,7 +6,7 @@
 int main() {
 
     std::println("\nlock-free-ds");
-    lockfree::SPSCBoundedQueue<std::uint64_t, 5> kyu;
+    lockfree::SPSCBoundedQueue<std::uint64_t, 4> kyu;
 
     static_assert(4 == kyu.capacity());
     assert(0 == kyu.size());

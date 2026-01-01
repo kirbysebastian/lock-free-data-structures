@@ -34,7 +34,7 @@ public:
     }
 
     bool isFull() const noexcept {
-        return ((m_headIdx & (N - 1)) == m_tailIdx) && m_headIdx > m_tailIdx;
+        return N == (m_headIdx - m_tailIdx);
     }
 
     bool isEmpty() const noexcept {
@@ -60,5 +60,5 @@ private:
     std::array<T, N> m_data;
 };
 
-} // namespace locfree
+} // namespace lockfree
 #endif //LOCK_FREE_DATA_STRUCTURE_SPSC_BOUNDED_QUEUE_HPP 
